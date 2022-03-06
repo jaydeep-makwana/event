@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.nav-logo {
+    color: rgb(66, 255, 230);
+    text-shadow: 2px 2px rgb(255, 189, 252);
+}
+
 
 /* .main {
     background-image: url(../image/./event-planningand-management-1024x683-750x350.jpg);

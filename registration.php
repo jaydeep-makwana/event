@@ -23,32 +23,11 @@
                  <li class="nav-item active">
                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                  </li>
-                 <li class="nav-item">
-                     <a class="nav-link" href="#">Link</a>
-                 </li>
-                 <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                         Dropdown
-                     </a>
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                         <a class="dropdown-item" href="#">Action</a>
-                         <a class="dropdown-item" href="#">Another action</a>
-                         <div class="dropdown-divider"></div>
-                         <a class="dropdown-item" href="#">Something else here</a>
-                     </div>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link disabled">Disabled</a>
-                 </li>
              </ul>
-             <form class="form-inline my-2 my-lg-0">
-                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-             </form>
          </div>
      </nav>
 
-     <div class="container border mt-5 w-50">
+     <div class="container border mt-5 p-1 w-50">
          <form>
 
              <div class="form-group ">
@@ -56,50 +35,83 @@
                  <input type="email" class="form-control" id="fullName" aria-describedby="emailHelp">
                  <small id="emailHelp" class="text-danger  "></small>
              </div>
+             <div class="row">
 
-             <div class="form-group ">
-                 <label for="rollNo">Roll No.</label>
-                 <input type="number" class="form-control" id="rollNo" aria-describedby="emailHelp">
-                 <small id="emailHelp" class="text-danger  "></small>
-             </div>
+             <div class="col-lg-4">
+                     <div class="form-group ">
+                         <label for="rollNo">Roll No.</label>
+                         <input type="text" class="form-control" id="rollNo" aria-describedby="emailHelp">
+                         <small id="emailHelp" class="text-danger  "></small>
+                     </div>
+                 </div>
 
-             <div class="form-group ">
-                 <select class="form-control">
-                     <option selected disabled>Standard</option>
-                     <option value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
-                     <option value="5">5</option>
-                     <option value="6">6</option>
-                     <option value="7">7</option>
-                     <option value="8">8</option>
-                     <option value="9">9</option>
-                     <option value="10">10</option>
-                     <option value="11">11</option>
-                     <option value="12">12</option>
-
-                 </select>
-             </div>
-
-             <div class="form-group ">
-                 <select class="form-control">
-                     <option selected disabled>Select Event</option>
-                     <option value="birthday">birthday</option>
-                     <option value="engagement">engagement</option>
-                 </select>
-             </div>
-
-             <div class="form-group">
-                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                     <label class="btn btn-secondary active">
-                         <input type="radio" name="options" value="male" id="option1" checked> Male
-                     </label>
-                     <label class="btn btn-secondary">
-                         <input type="radio" name="options" value="female" id="option2"> Female
-                     </label>
+                 <div class="col-lg-8">
+                     <div class="form-group ">
+                         <label for="rollNo">Mobile No.</label>
+                         <input type="text" class="form-control" id="rollNo" aria-describedby="emailHelp">
+                         <small id="emailHelp" class="text-danger  "></small>
+                     </div>
                  </div>
              </div>
+
+
+
+
+
+
+             <div class="row">
+                 <div class="col-lg-3">
+
+                     <div class="form-group ">
+                         <select class="form-control">
+                             <option selected disabled>Standard</option>
+                             <option value="1">1</option>
+                             <option value="2">2</option>
+                             <option value="3">3</option>
+                             <option value="4">4</option>
+                             <option value="5">5</option>
+                             <option value="6">6</option>
+                             <option value="7">7</option>
+                             <option value="8">8</option>
+                             <option value="9">9</option>
+                             <option value="10">10</option>
+                             <option value="11">11</option>
+                             <option value="12">12</option>
+
+                         </select>
+                     </div>
+                 </div>
+
+
+
+
+                 <div class="col-lg-3">
+
+                     <div class="form-group ">
+                         <select class="form-control">
+                             <option selected disabled>Select Event</option>
+                             <option value="birthday">birthday</option>
+                             <option value="engagement">engagement</option>
+                         </select>
+                     </div>
+
+                 </div>
+                 <div class="col-lg-3">
+
+                     <div class="form-group mt-2">
+                         <div class="form-check form-check-inline">
+                             <input class="form-check-input" type="radio" name="gender" id="inlineCheckbox1" value="option1">
+                             <label class="form-check-label" for="inlineCheckbox1">Male</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input class="form-check-input" type="radio" name="gender" id="inlineCheckbox1" value="option1">
+                             <label class="form-check-label" for="inlineCheckbox1">Female</label>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+
 
 
 
