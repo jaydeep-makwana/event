@@ -1,12 +1,7 @@
 <?php
 include 'config.php';
-$event  = 'football';
-// $fetchEvent = "SELECT * FROM event ";
-//             $result = mysqli_query($conn, $fetchEvent);
-//             $data = mysqli_fetch_assoc($result);
-            
 
-$fNameErr = $mNameErr = $lNameErr = $stdErr  = $rollNoErr = $genErr = $eventErr = $mobileErr =  $dateErr =  $timeErr = '';
+$fNameErr = $mNameErr = $lNameErr = $stdErr  = $rollNoErr = $genErr = $eventErr = $mobileErr =  $dateErr =  $sTimeErr = $eTimeErr = '';
 
 # insert data through user
 if (isset($_POST['submit'])) {
@@ -74,20 +69,14 @@ if (isset($_POST['submit'])) {
             echo mysqli_error($conn);
         } else {
             #fetch events from admin's data
-            $fetchEvent = "SELECT * FROM events WHERE 'event' = $event";
+            $fetchEvent = "SELECT * FROM events WHERE event = '$event'";
             $result = mysqli_query($conn, $fetchEvent);
             $data = mysqli_fetch_assoc($result);
             $event = $data['event'];
             $date = $data['date'];
             $time = $data['time'];
-            // function success()
-            // {
-            //     global $fullName;
-            //     global $event;
-            //     global $date;
-            //     global $time;
-                echo "Hello $fullName ,Thanks for your interest in event management, your chosen event is $event. Your event date is $date and time is $time";
-            // }
+
+                echo "Hello $fullName ,Thanks for your interest in The Event Management, your chosen event is $event. Your event date is $date and time is $time";
         }
     }
 }
@@ -107,7 +96,7 @@ if (isset($_POST['createEvent'])) {
      id int(10) AUTO_INCREMENT not null primary key,
      event varchar(100) not null,
      date date ,
-     time time)";
+     time varchar(100) not null)";
 
         if (!mysqli_query($conn, $createTable)) {
             echo mysqli_error($conn);
@@ -120,14 +109,17 @@ if (isset($_POST['createEvent'])) {
         $eventErr = 'enter event';
     } elseif (empty($_POST['date'])) {
         $dateErr = 'enter date of event';
-    } elseif (empty($_POST['time'])) {
-        $timeErr = 'enter time of event';
+    } elseif (empty($_POST['stime'])) {
+        $sTimeErr = 'enter time of start event';
+    } elseif (empty($_POST['etime'])) {
+        $eTimeErr = 'enter time of end event';
     } else {
 
         $event = $_POST['event'];
         $date = $_POST['date'];
-        $time = $_POST['time'];
-
+        $stime = $_POST['stime'];
+        $etime = $_POST['etime'];
+        $time = $stime . ' to ' . $etime;
 
         $insertQuery = "INSERT INTO events (`event`,`date`,`time`) VALUES ('$event ','$date','$time')";
         if (!mysqli_query($conn, $insertQuery)) {

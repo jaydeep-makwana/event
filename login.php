@@ -98,7 +98,7 @@ function setValue($value)
 
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input class="form-control" type="text" id="password" name="password" value="<?php setValue('password'); ?>">
+                    <input class="form-control" type="password" id="password" name="password" value="<?php setValue('password'); ?>">
                 </div>
 
                 <div class="form-check showPassword">

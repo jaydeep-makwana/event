@@ -76,14 +76,26 @@ function setValue($value)
 
          
           
+<div class="row">
+<div class="col-lg-6">
 
-                <div class="form-group ">
-                    <label for="fullName">Time</label>
-                    <input type="time" class="form-control" id="fullName" name="time" value="<?php setValue('time'); ?>">
-                    <small><?php echo $timeErr; ?></small>
-                </div>
+    <div class="form-group ">
+        <label for="fullName">Start Time</label>
+        <input type="time" class="form-control" id="fullName" name="stime" value="<?php setValue('stime'); ?>">  
+        <small><?php echo $sTimeErr; ?></small>
+    </div>
+</div>
 
-           
+<div class="col-lg-6">
+    <div class="form-group ">
+        <label for="fullName">End Time</label>
+        <input type="time" class="form-control" id="fullName" name="etime" value="<?php setValue('etime'); ?>">
+        <small><?php echo $eTimeErr; ?></small>
+    </div>
+</div>
+    
+</div>
+    
 
 
 
