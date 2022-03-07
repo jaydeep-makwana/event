@@ -3,9 +3,16 @@
     padding: 0;
 }
 
-.nav-logo {
-    color: rgb(66, 255, 230);
-    text-shadow: 2px 2px rgb(255, 189, 252);
+nav {
+    background-color: black;
+}
+
+nav a {
+    color: white;
+}
+
+small {
+    color: red;
 }
 
 
