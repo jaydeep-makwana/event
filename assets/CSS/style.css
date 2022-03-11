@@ -15,6 +15,11 @@ small {
     color: red;
 }
 
+.alert {
+    display: none;
+    width: 30%;
+}
+
 
 /* .main {
     background-image: url(../image/./event-planningand-management-1024x683-750x350.jpg);

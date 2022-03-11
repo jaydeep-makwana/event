@@ -18,10 +18,10 @@ function checked($name, $value, $show)
 }
 
 #fetch events from admin's data
-$fetchEvent = "SELECT * FROM events" ;
+$fetchEvent = "SELECT * FROM events";
 $result = mysqli_query($conn, $fetchEvent);
 
- 
+
 ?>
 
 
@@ -40,7 +40,7 @@ $result = mysqli_query($conn, $fetchEvent);
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark    ">
-         <img src="./assets/./image/./Capture.PNG" width="80" alt="can't load image"> 
+        <img src="./assets/./image/./Capture.PNG" width="80" alt="can't load image">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -55,6 +55,27 @@ $result = mysqli_query($conn, $fetchEvent);
 
 
     </nav>
+
+    <div class="alert alert-success  mx-auto" 
+   id="alert" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <?php if (isset($msg)) { show();?>
+           
+        <h4 class="alert-heading">Hello <strong> <?php  echo $fullName?></strong>!</h4>
+        <p class="ml-4">
+           
+ 
+                 Thanks for your interest in The Event Management, your chosen event is <strong><?php echo $event ?></strong> . Your event time is <strong><?php echo $time ?></strong> and date is <strong><?php echo $date ?></strong>.";
+                
+          
+            
+            </p>
+            <hr>
+            <p  id="footer" > Thank you</p>
+            <?php  } ?>
+    </div>
 
     <div class="container border mt-5 p-1 w-50">
         <form method="post">
@@ -152,7 +173,7 @@ $result = mysqli_query($conn, $fetchEvent);
                         <label for="rollNo">Event</label>
                         <select class="form-control" name="event">
                             <option selected disabled>Select Event</option>
-                            <?php  while ($data = mysqli_fetch_assoc($result) ) {
+                            <?php while ($data = mysqli_fetch_assoc($result)) {
                                 $event = $data['event']; ?>
                                 <option value="<?php echo $data['event']; ?>" <?php checked('event', "$event", 'selected'); ?>><?php echo $data['event']; ?></option>
                             <?php  }   ?>

@@ -75,14 +75,19 @@ if (isset($_POST['submit'])) {
             $event = $data['event'];
             $date = $data['date'];
             $time = $data['time'];
+            $msg = "";
+            function show()
+            {
 
-                echo "Hello $fullName ,Thanks for your interest in The Event Management, your chosen event is $event. Your event date is $date and time is $time";
+?>
+                <script>
+                    document.getElementById("alert").style.display = "block";
+                </script>
+            <?php
+            }
         }
     }
 }
-
-
-
 
 
 
