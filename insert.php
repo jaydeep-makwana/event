@@ -25,6 +25,7 @@ if (isset($_POST['submit'])) {
 
 
 
+
     if (empty($_POST['fName'])) {
         $fNameErr = 'enter your first name';
     } elseif (!preg_match("/^[a-zA-Z]*$/", $_POST['fName'])) {
@@ -43,6 +44,8 @@ if (isset($_POST['submit'])) {
         $stdErr = 'only enter number ';
     } elseif (empty($_POST['rollNo'])) {
         $rollNoErr = 'roll No. shold be not empty ';
+    } elseif ($_POST['rollNo'] <= 0) {
+        $rollNoErr = 'roll No. shold greaterthan 0 ';
     } elseif (!preg_match("/\d/", $_POST['rollNo'])) {
         $rollNoErr = 'roll No. must be in digit';
     } elseif (empty($_POST['gender'])) {
@@ -53,6 +56,8 @@ if (isset($_POST['submit'])) {
         $mobileErr = 'mobile number should be not empty';
     } elseif (!preg_match("/\d/", $_POST['mobile'])) {
         $mobileErr = 'mobile number must be in digit';
+    } elseif ($_POST['mobile'] <= 0) {
+        $mobileErr = 'mobile No. shold greaterthan 0 ';
     } elseif (strlen($_POST['mobile']) != 10) {
         $mobileErr = 'mobile number should be 10 characters';
     } else {
@@ -62,7 +67,6 @@ if (isset($_POST['submit'])) {
         $gender = $_POST['gender'];
         $event = $_POST['event'];
         $mobile = $_POST['mobile'];
-
 
         $insertQuery = "INSERT INTO student (`fullName`,`standard`,`rollNo`,`gender`,`event`,`mobileNo`) VALUES ('$fullName','$std','$rollNo','$gender','$event ','$mobile')";
         if (!mysqli_query($conn, $insertQuery)) {
