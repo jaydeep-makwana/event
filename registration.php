@@ -67,7 +67,7 @@ $result = mysqli_query($conn, $fetchEvent);
         <p class="ml-4">
            
  
-                 Thanks for your interest in The Event Management, your chosen event is <strong><?php echo $event ?></strong> . Your event time is <strong><?php echo $time ?></strong> and date is <strong><?php echo $date ?></strong>.";
+                 Thanks for your interest in The Event Management, your chosen event is <strong><?php echo $event ?></strong> . Your event time is <strong><?php echo $time ?></strong> and date is <strong><?php echo $date ?></strong>.;
                 
           
             
@@ -78,7 +78,7 @@ $result = mysqli_query($conn, $fetchEvent);
     </div>
 
     <div class="container border mt-5 p-1 w-50">
-        <form method="post">
+        <form method="post" id="form">
             <div class="row">
                 <div class="col-lg-4">
 
@@ -209,7 +209,9 @@ $result = mysqli_query($conn, $fetchEvent);
         </form>
     </div>
 
-
+<script>
+    document.getElementById('form').reset();
+</script>
 
     <script src="./assets/./JS/./jquery.slim.min.js"></script>
     <script src="./Assets/./bootstrap-4.6.1-dist/./js/./bootstrap.bundle.min.js"></script>
